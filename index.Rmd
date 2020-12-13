@@ -1,0 +1,38 @@
+--- 
+title: "Welcome!"
+author: "David J. Stanley"
+date: "`r Sys.Date()`"
+documentclass: krantz
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: yes
+lof: yes
+site: bookdown::bookdown_site
+description: Course notes for PSYC 3290
+github-repo: dstanley4/psyc3290bookdown
+graphics: yes
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE, formatR.indent = 2, width = 55, digits = 4
+)
+
+# install the packages needed by this book; you fill out c(), e.g. c('ggplot2', 'dplyr')
+lapply(c('xfun'), function(pkg) {
+  if (system.file(package = pkg) == '') install.packages(pkg)
+})
+```
+
+
+# Course: {-}
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("header_3290.png")
+```
+
+These notes are a resource for students in my PSYC 3290 class.
