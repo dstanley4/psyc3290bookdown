@@ -291,8 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="data-entry.html"><a href="data-entry.html#data-collection-considerations"><i class="fa fa-check"></i><b>6.3</b> Data collection considerations</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="data-entry.html"><a href="data-entry.html#naming-conventions"><i class="fa fa-check"></i><b>6.3.1</b> Naming conventions</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="data-entry.html"><a href="data-entry.html#examples"><i class="fa fa-check"></i><b>6.4</b> Examples</a></li>
-<li class="chapter" data-level="6.5" data-path="data-entry.html"><a href="data-entry.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>6.5</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="6.4" data-path="data-entry.html"><a href="data-entry.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>6.4</b> Entering data into spreadsheets</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -626,7 +625,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
-<p>Fortunately, the problems with Table <a href="data-entry.html#tab:withinex">6.2</a> can be largely resolved by converting the data to the a tidy data format. This can be done with the pivot_long() command that we will learn about later in this chapter. Thus, we can enter the data in the format of Table <a href="data-entry.html#tab:withinex">6.2</a> and later convert it to a tidy data format. After this conversion the data will be appear as in Table <a href="data-entry.html#tab:withintidyex">6.3</a>. For elapsed_time variable this data is now in the tidy data format. Each row corresponds to a single elapsed_time observed. Each column corresponds to a single variable. Somewhat problematically, however, sex is repeated three times for each person (i.e., over the three rows) - and this can be confusing. However, if the focus in on analyzing elapsed time this tidy data format makes sense. Importantly, there is an id column for each participant so R knows that this information is repeated for each participant and is not confused by repeating the sex designation over three rows. Indirectly, this illustrates the importance of having an id column to indicate each unique participant.</p>
+<p>Fortunately, the problems with Table <a href="data-entry.html#tab:withinex">6.2</a> can be largely resolved by converting the data to the a tidy data format. This can be done with the pivot_longer() command that we will learn about later. Thus, we can enter the data in the format of Table <a href="data-entry.html#tab:withinex">6.2</a> and later convert it to a tidy data format. After this conversion the data will be appear as in Table <a href="data-entry.html#tab:withintidyex">6.3</a>. For elapsed_time variable this data is now in the tidy data format. Each row corresponds to a single elapsed_time observed. Each column corresponds to a single variable. Somewhat problematically, however, sex is repeated three times for each person (i.e., over the three rows) - and this can be confusing. However, if the focus in on analyzing elapsed time this tidy data format makes sense. Importantly, there is an id column for each participant so R knows that this information is repeated for each participant and is not confused by repeating the sex designation over three rows. Indirectly, this illustrates the importance of having an id column to indicate each unique participant.</p>
 <p>Why did we walk you through this technical treatment of structuring data at this point in time - so that you pay attention to the advice that follows. You can see at this point that you may well need to restructure your data for certain analyses. The ability to do so quickly and easily depends upon following the advice in this chapter around naming conventions for variables and other aspects of your analyses. You can imagine the challenges for converting the data in Figure <a href="data-entry.html#tab:withinex">6.2</a> to the data in Figure <a href="data-entry.html#tab:withintidyex">6.3</a> by hand. You want to be able to automate that process and others - which is made substantially easier if you follow the forthcoming advice about naming conventions in the tidyverse.</p>
 </div>
 </div>
@@ -647,44 +646,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="examples" class="section level2">
-<h2><span class="header-section-number">6.4</span> Examples</h2>
-<p>Below we present example scripts transforming raw data to analytic data for various study designs (experimental and survey). These examples illustrate the value of using the naming conventions outlined previously. Don’t just read the example - follow along with the projects by creating a separate script for each example. Resist the urge to cut and paste from this document - type the script yourself.</p>
-<p>When first learning iPhone/Mac software development, I did so by taking a course at <a href="https://www.bignerdranch.com">Big Nerd Ranch</a> - yes, that’s a real place. They advised in their material (and now book) the following: “We have learned that “going through the motions” is much more important than it sounds. Many times we will ask you to start typing in code before you understand it. We realize that you may feel like a trained monkey typing in a bunch of code that you do not fully grasp. But the best way to learn coding is to find and fix your typos. Far from being a drag, this basic debugging is where you really learn the ins and outs of the code. That is why we encourage you to type in the code yourself. You could just download it, but copying and pasting is not programming. We want better for you and your skills.", p. xiv, <span class="citation">(Keur and Hillegass <a href="#ref-keur2020" role="doc-biblioref">2020</a>)</span>. This is excellent advice for a beginning statistician or data scientist as well. And as an aside: if you want to learn iPhone programming you can’t go wrong with the Big Nerd Ranch guide!</p>
-<p>As you work through this chapter, create your own new script for each example. In light of the above advice, avoid copying and pasting code - type it out; you will be the better for it.</p>
-<p>Getting started:</p>
-<p><strong>The Class: R Studio in the Cloud Assignment</strong></p>
-<ol style="list-style-type: decimal">
-<li>The data should be in the assignment project automatically. Just start the assignment.</li>
-</ol>
-<p>For everyone in the class, that’s it.</p>
-<p>For those of you not in the class, and reading this work, see the two options below:</p>
-<p><strong>R Studio Cloud, custom project</strong></p>
-<ol style="list-style-type: decimal">
-<li><p>Create a new Project using the web interface</p></li>
-<li><p>Upload all the example data files into the project. The data files needed are listed at the beginning of this chapter. The upload button can be found on the Files tab.</p></li>
-</ol>
-<p><strong>R Studio Computer, custom project</strong></p>
-<ol style="list-style-type: decimal">
-<li><p>Create a folder on your computer for the example</p></li>
-<li><p>Place all the example data files in that folder. The data files needed are listed at the beginning of this chapter.</p></li>
-<li><p>Use the menu item File &gt; New Project… to start the project</p></li>
-<li><p>On the window that appears select “Existing Directory”</p></li>
-<li><p>On the next screen, press the “Browse” button and find/select the folder with your data</p></li>
-<li><p>Press the Create Project Button</p></li>
-</ol>
-<p>Regardless of whether your are working from the cloud, or locally, you should now have an R Studio project with your data files in it.</p>
-<p>We anticipate that many people will doubtless want to refer back to an encapsulated set of instructions for each design. Therefore the example for each design is written in a way that it stands alone. A consequence of this approach is that there is some redundancy in the code across examples. We see this a strength - because readers will see the commonalities across differ types of designs.</p>
-<p>As you make a script for each example:</p>
-<ul>
-<li><p>Recall the instruction from Chapter 1 about putting the date and your name in the script via comments.</p></li>
-<li><p>Recall the instruction from Chapter 1 about running library(tidyverse) before you type the rest of each script - this provides you with tidyverse autocomplete for the script.</p></li>
-<li><p>After you type each new block of code in an example, save your script.</p></li>
-<li><p>After you type each new block of code in an example, do two additional things: 1) Session Restart R, 2) Run your script using Source with Echo.</p></li>
-</ul>
-</div>
 <div id="entering-data-into-spreadsheets" class="section level2">
-<h2><span class="header-section-number">6.5</span> Entering data into spreadsheets</h2>
+<h2><span class="header-section-number">6.4</span> Entering data into spreadsheets</h2>
+<p>You should usually enter data using the one row per person/animal rule. You can convert this format to the tidy data format if needed.</p>
 <p>The first example uses a data file data_ex_between.csv that corresponds to a fictitious example where we recorded the run times for a number of male and female participants. How did we create this data file? We used a spreadsheet to enter the data, as illustrated in Figure <a href="data-entry.html#fig:spreadsheetbetween">6.1</a>. Programs like Microsoft Excel and Google Sheets are good options for entering data.</p>
 <div class="figure"><span id="fig:spreadsheetbetween"></span>
 <img src="ch_enter_load/images/screenshot_data_between.png" alt="Spreadsheet entry of running data" width="40%" />
@@ -705,9 +669,6 @@ FIGURE 6.2: Text view of CSV data
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-keur2020">
-<p>Keur, Christian, and Aaron Hillegass. 2020. <em>IOS Programming: The Big Nerd Ranch Guide</em>. Pearson Technology Group.</p>
-</div>
 <div id="ref-tidy-data">
 <p>Wickham, Hadley. 2014. “Tidy Data.” <em>The Journal of Statistical Software</em> 59 (10). <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.</p>
 </div>

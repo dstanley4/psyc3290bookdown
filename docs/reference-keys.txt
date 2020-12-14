@@ -199,5 +199,4 @@ overview-2
 structuring-data-obtaining-tidy-data
 data-collection-considerations
 naming-conventions
-examples
 entering-data-into-spreadsheets
