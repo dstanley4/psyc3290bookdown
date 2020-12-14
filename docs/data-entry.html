@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Welcome!</title>
+  <title>Chapter 6 Data Entry | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3290" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Welcome!" />
+  <meta property="og:title" content="Chapter 6 Data Entry | Welcome!" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dstanley4/psyc3290bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Welcome!" />
+  <meta name="twitter:title" content="Chapter 6 Data Entry | Welcome!" />
   
   <meta name="twitter:description" content="Course notes for PSYC 3290" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-entry.html"/>
-
+<link rel="prev" href="sampling-accuracy.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -315,31 +315,401 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-
-<div id="refs" class="references">
-<div>
-<p>Cohen, Jacob. 1988. <em>Statistical Power Analysis for the Behavioral Sciences</em>. Academic press.</p>
+<div id="data-entry" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Data Entry</h1>
+<div id="required-packages" class="section level2">
+<h2><span class="header-section-number">6.1</span> Required Packages</h2>
+<p>The data files below are used in this chapter. The files are available at: <a href="https://github.com/dstanley4/psyc3250bookdown" class="uri">https://github.com/dstanley4/psyc3250bookdown</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>data_item_scoring.csv</td>
+</tr>
+</tbody>
+</table>
+<p>The following CRAN packages must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required CRAN Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>apaTables</td>
+</tr>
+<tr class="even">
+<td>Hmisc</td>
+</tr>
+<tr class="odd">
+<td>janitor</td>
+</tr>
+<tr class="even">
+<td>psych</td>
+</tr>
+<tr class="odd">
+<td>skimr</td>
+</tr>
+<tr class="even">
+<td>tidyverse</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important Note:</strong> You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).</p>
 </div>
-<div>
+<div id="overview-2" class="section level2">
+<h2><span class="header-section-number">6.2</span> Overview</h2>
+<p>In this chapter we strongly advocate that you use a naming convention for file, variable, and column names. This convention will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not “right” or “correct” - there are other naming conventions you can use. Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems. We encourage to use this system for weeks or months over many projects - until you see the benefits of this system, and correspondingly its shortcomings. After you are well versed in the strengths/weaknesses of the naming conventions used here you may choose to create your own naming convention system.</p>
+<div id="structuring-data-obtaining-tidy-data" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Structuring data: Obtaining tidy data</h3>
+<p>When conducting analyses in R it is typically necessary to have data in a format called tidy data <span class="citation">(Wickham <a href="#ref-tidy-data" role="doc-biblioref">2014</a>)</span>. <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">Tidy data</a>, as defined by Hadley, involves (among other requirements) that:</p>
+<ol style="list-style-type: decimal">
+<li><p>Each variable forms a column.</p></li>
+<li><p>Each observation forms a row.</p></li>
+</ol>
+<p>The tidy data format can be initially challenging for some researchers to understand because it is based on thinking about, and structuring data, in terms of observations/measurements instead of participants. In this section we will describe common approaches to entering animal and human participant data and how they can be done keeping the tidy data requirement in mind. It’s not essential that data be entered in a tidy data format but it is essential that you enter data in a manner that makes it easy to later convert data to a tidy data format. When dealing with animal or human participant data it’s common to enter data into a spreadsheet. Each row of the spreadsheet is typically used to represent a single participant and each column of the spreadsheet is used to represent a variable.</p>
+<p><strong>Between participant data</strong>. Consider Table <a href="data-entry.html#tab:betweenex">6.1</a> which illustrates between participant data for six human participants running 5 kilometers. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The second column is sex, which is a variable, and there is one observation per for row, so sex also conforms to the tidy data specification. Finally, there is a last column five_km_time which is a variable with one observation per row – also conforming to tidy data specification. Thus, single occasion between subject data like this conforms to the tidy data specification. There is usually nothing you need to do to convert between participant data (or cross-sectional data) to be in a tidy data format.</p>
+<table>
+<caption><span id="tab:betweenex">TABLE 6.1: </span>Between participant data entered one row per participant</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="right">elapsed_time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="right">36</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Within participant data</strong>. Consider Table <a href="data-entry.html#tab:withinex">6.2</a> which illustrates within participant data for six human participants running 5 kilometers - but on three different occasions. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The second column is sex, which is a variable, and there is one observation per for row, so sex also conforms to the tidy data specification. Next, there are three different columns (march, may, july) each of which contains elapsed time (in minutes) for the runner in a different month. Elapsed run times are spread out over three columns so elapse_time is not in a tidy data format. Moreover, it’s not clear from the data file that march, may, and july are levels of a variable called occasion. Nor is it clear that elapsed_times are recorded in each of those columns (i.e., the dependent variable is unknown/not labeled). Although this format is fine as a data entry format it clearly has problems associated with it when it comes time to analyze your data.</p>
+<table>
+<caption><span id="tab:withinex">TABLE 6.2: </span>Within participant data entered one row per participant</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="right">march</th>
+<th align="right">may</th>
+<th align="right">july</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="right">40</td>
+<td align="right">37</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="right">35</td>
+<td align="right">32</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="right">38</td>
+<td align="right">35</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="right">33</td>
+<td align="right">30</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="right">42</td>
+<td align="right">39</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="right">36</td>
+<td align="right">33</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:withintidyex">TABLE 6.3: </span>A tidy data version of the within participant data</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="left">occasion</th>
+<th align="right">elapsed_time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">37</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">39</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<p>Thus, a major problem with entering repeated measures data in the one row per person format is that there are hidden variables in the data and you need insider knowledge to know what the columns represent. That said, this is not necessarily a terrible way to enter your data as long as you have all of this missing information documented in a data code book.</p>
+<table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Disadvantages one row per participant</th>
+<th>Advantages one row per participant</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) Predictor variable (<em>occasion</em>) is hidden and spread over multiple columns</td>
+<td>1) Easy to enter this way</td>
+</tr>
+<tr class="even">
+<td>2) Unclear that each month is a level of the predictor variable <em>occasion</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3) Dependent variable (<em>elapsed_time</em>) is not indicated</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4) Unclear that <em>elapsed_time</em> is the measurement in each month column</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<p>Fortunately, the problems with Table <a href="data-entry.html#tab:withinex">6.2</a> can be largely resolved by converting the data to the a tidy data format. This can be done with the pivot_long() command that we will learn about later in this chapter. Thus, we can enter the data in the format of Table <a href="data-entry.html#tab:withinex">6.2</a> and later convert it to a tidy data format. After this conversion the data will be appear as in Table <a href="data-entry.html#tab:withintidyex">6.3</a>. For elapsed_time variable this data is now in the tidy data format. Each row corresponds to a single elapsed_time observed. Each column corresponds to a single variable. Somewhat problematically, however, sex is repeated three times for each person (i.e., over the three rows) - and this can be confusing. However, if the focus in on analyzing elapsed time this tidy data format makes sense. Importantly, there is an id column for each participant so R knows that this information is repeated for each participant and is not confused by repeating the sex designation over three rows. Indirectly, this illustrates the importance of having an id column to indicate each unique participant.</p>
+<p>Why did we walk you through this technical treatment of structuring data at this point in time - so that you pay attention to the advice that follows. You can see at this point that you may well need to restructure your data for certain analyses. The ability to do so quickly and easily depends upon following the advice in this chapter around naming conventions for variables and other aspects of your analyses. You can imagine the challenges for converting the data in Figure <a href="data-entry.html#tab:withinex">6.2</a> to the data in Figure <a href="data-entry.html#tab:withintidyex">6.3</a> by hand. You want to be able to automate that process and others - which is made substantially easier if you follow the forthcoming advice about naming conventions in the tidyverse.</p>
+</div>
+</div>
+<div id="data-collection-considerations" class="section level2">
+<h2><span class="header-section-number">6.3</span> Data collection considerations</h2>
+<p>Data can be collected in a wide variety of ways. Regardless of the method of data collection researchers typically come to data in one of two ways: 1) a research assistant enters the data into a spreadsheet type interface, or 2) the data is obtained as the output from computer software (e.g., Qualtrics, SurveyMonkey, Noldus, etc.).</p>
+<p>Regardless of the approach, it is critical to name your variables appropriately. For those using software, such as Qualtrics, this means setting up the software to use appropriate variable names PRIOR to data collection - so the exported file has desirable column names. For spreadsheet users, this means setting up the spreadsheet in which the data will be recorded with column names that are amenable to the future analyses you want to conduct.</p>
+<p>Although failure to take this thoughtful approach at the data collection stage can be overcome - it is only overcome with substantial manual effort. Therefore, as noted previously, we strongly encourage you to follow the naming conventions we espouse here when you set up your data recording regime. Additionally, we encourage you to give careful thought in advance to the codes you will use to record missing data.</p>
+<div id="naming-conventions" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Naming conventions</h3>
+<p>To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse <a href="https://style.tidyverse.org">style guide</a>.</p>
+<ul>
+<li><p>Lowercase letters only</p></li>
+<li><p>If two word column names are necessary, only use the underscore ("_") character to separate words in the name.</p></li>
+<li><p>Avoid short decontextualized variable names like q1, q2, q3, etc.</p></li>
+<li><p>Do use moderate length column names. Aim to achieve a unique prefix for related columns so that those columns can be selected using the starts_with() command discussed in the previous chapter. Be sure to avoid short two or three letter prefixes for item names. Instead, use unique moderate length item prefixes so that it will easy to select those columns using start_with() such that you don’t accidentally get additionally columns you don’t want - that have a similar prefix. See the Likert-type item section below for additional details.</p></li>
+<li><p>If you have a column name that represents the levels of two repeated measures variables only use the underscore character to separate the levels of the different variables. See within-participant ANOVA section below for details.</p></li>
+</ul>
+</div>
+</div>
+<div id="examples" class="section level2">
+<h2><span class="header-section-number">6.4</span> Examples</h2>
+<p>Below we present example scripts transforming raw data to analytic data for various study designs (experimental and survey). These examples illustrate the value of using the naming conventions outlined previously. Don’t just read the example - follow along with the projects by creating a separate script for each example. Resist the urge to cut and paste from this document - type the script yourself.</p>
+<p>When first learning iPhone/Mac software development, I did so by taking a course at <a href="https://www.bignerdranch.com">Big Nerd Ranch</a> - yes, that’s a real place. They advised in their material (and now book) the following: “We have learned that “going through the motions” is much more important than it sounds. Many times we will ask you to start typing in code before you understand it. We realize that you may feel like a trained monkey typing in a bunch of code that you do not fully grasp. But the best way to learn coding is to find and fix your typos. Far from being a drag, this basic debugging is where you really learn the ins and outs of the code. That is why we encourage you to type in the code yourself. You could just download it, but copying and pasting is not programming. We want better for you and your skills.", p. xiv, <span class="citation">(Keur and Hillegass <a href="#ref-keur2020" role="doc-biblioref">2020</a>)</span>. This is excellent advice for a beginning statistician or data scientist as well. And as an aside: if you want to learn iPhone programming you can’t go wrong with the Big Nerd Ranch guide!</p>
+<p>As you work through this chapter, create your own new script for each example. In light of the above advice, avoid copying and pasting code - type it out; you will be the better for it.</p>
+<p>Getting started:</p>
+<p><strong>The Class: R Studio in the Cloud Assignment</strong></p>
+<ol style="list-style-type: decimal">
+<li>The data should be in the assignment project automatically. Just start the assignment.</li>
+</ol>
+<p>For everyone in the class, that’s it.</p>
+<p>For those of you not in the class, and reading this work, see the two options below:</p>
+<p><strong>R Studio Cloud, custom project</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Create a new Project using the web interface</p></li>
+<li><p>Upload all the example data files into the project. The data files needed are listed at the beginning of this chapter. The upload button can be found on the Files tab.</p></li>
+</ol>
+<p><strong>R Studio Computer, custom project</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Create a folder on your computer for the example</p></li>
+<li><p>Place all the example data files in that folder. The data files needed are listed at the beginning of this chapter.</p></li>
+<li><p>Use the menu item File &gt; New Project… to start the project</p></li>
+<li><p>On the window that appears select “Existing Directory”</p></li>
+<li><p>On the next screen, press the “Browse” button and find/select the folder with your data</p></li>
+<li><p>Press the Create Project Button</p></li>
+</ol>
+<p>Regardless of whether your are working from the cloud, or locally, you should now have an R Studio project with your data files in it.</p>
+<p>We anticipate that many people will doubtless want to refer back to an encapsulated set of instructions for each design. Therefore the example for each design is written in a way that it stands alone. A consequence of this approach is that there is some redundancy in the code across examples. We see this a strength - because readers will see the commonalities across differ types of designs.</p>
+<p>As you make a script for each example:</p>
+<ul>
+<li><p>Recall the instruction from Chapter 1 about putting the date and your name in the script via comments.</p></li>
+<li><p>Recall the instruction from Chapter 1 about running library(tidyverse) before you type the rest of each script - this provides you with tidyverse autocomplete for the script.</p></li>
+<li><p>After you type each new block of code in an example, save your script.</p></li>
+<li><p>After you type each new block of code in an example, do two additional things: 1) Session Restart R, 2) Run your script using Source with Echo.</p></li>
+</ul>
+</div>
+<div id="entering-data-into-spreadsheets" class="section level2">
+<h2><span class="header-section-number">6.5</span> Entering data into spreadsheets</h2>
+<p>The first example uses a data file data_ex_between.csv that corresponds to a fictitious example where we recorded the run times for a number of male and female participants. How did we create this data file? We used a spreadsheet to enter the data, as illustrated in Figure <a href="data-entry.html#fig:spreadsheetbetween">6.1</a>. Programs like Microsoft Excel and Google Sheets are good options for entering data.</p>
+<div class="figure"><span id="fig:spreadsheetbetween"></span>
+<img src="ch_enter_load/images/screenshot_data_between.png" alt="Spreadsheet entry of running data" width="40%" />
+<p class="caption">
+FIGURE 6.1: Spreadsheet entry of running data
+</p>
+</div>
+<p>The key to using these types of programs is to save the data as a .csv file when you are done. CSV is short for Comma Separated Values. After entering the data in Figure <a href="data-entry.html#fig:spreadsheetbetween">6.1</a> we saved it as data_ex_between.csv. There is no need to do so, but if you were to open this file in a text editor (such as TextEdit on a Mac or Notepad on Windows) you would see the information displayed in Figure <a href="data-entry.html#fig:csvsheetbetween">6.2</a>. You can see there is one row per person and the columns are created by separating each values by a comma; hence, comma separated values.</p>
+<div class="figure"><span id="fig:csvsheetbetween"></span>
+<img src="ch_enter_load/images/screenshot_csv_between.png" alt="Text view of CSV data" width="25%" />
+<p class="caption">
+FIGURE 6.2: Text view of CSV data
+</p>
+</div>
+<p>There are many ways to save data, but the CSV data is one of the better ones because it is a non-proprietary format. Some software, such as SPSS, uses a proprietary format (e.g., .sav for SPSS) this makes it challenging to access that data if you don’t have that (often expensive) software. One of our goals as scientists is to make it easy for others to audit our work - that allows science to be self-correcting. Therefore, choose an open format for your data like .csv.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-keur2020">
 <p>Keur, Christian, and Aaron Hillegass. 2020. <em>IOS Programming: The Big Nerd Ranch Guide</em>. Pearson Technology Group.</p>
 </div>
-<div>
-<p>Lee Rodgers, Joseph, and W Alan Nicewander. 1988. “Thirteen Ways to Look at the Correlation Coefficient.” <em>The American Statistician</em> 42 (1): 59–66.</p>
-</div>
-<div>
-<p>Margulis, Dan. 2005. <em>Photoshop Lab Color: The Canyon Conundrum and Other Adventures in the Most Powerful Colorspace</em>. Peachpit Press.</p>
-</div>
-<div>
-<p>Schäfer, Thomas, and Marcus A Schwarz. 2019. “The Meaningfulness of Effect Sizes in Psychological Research: Differences Between Sub-Disciplines and the Impact of Potential Biases.” <em>Frontiers in Psychology</em> 10: 813. <a href="https://doi.org/10.3389/fpsyg.2019.00813">https://doi.org/10.3389/fpsyg.2019.00813</a>.</p>
-</div>
-<div>
-<p>Schmidt, Frank L, and John E Hunter. 2014. <em>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</em>. Sage.</p>
-</div>
-<div>
+<div id="ref-tidy-data">
 <p>Wickham, Hadley. 2014. “Tidy Data.” <em>The Journal of Statistical Software</em> 59 (10). <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.</p>
-</div>
 </div>
 </div>
             </section>
@@ -347,8 +717,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-entry.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="sampling-accuracy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -379,7 +749,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/99-references.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/06-enter_load.Rmd",
 "text": "Edit"
 },
 "history": {
