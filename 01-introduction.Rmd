@@ -415,7 +415,7 @@ print(my_list$office_number)
 
 In the text above we learned about vectors of characters. This information can be used handle missing values in the read_csv() command. Consider a data set where for many participants we did not get a response to a question. We might have that represented in various ways within the data file. The value for that question might simply be omitted (i.e., represented by nothing -- ""), represented by NA for not available, or maybe simply be something like -777. 
 
-When we load data with read_csv() we can indicate to the computer how missing values are represented. This ensures the computer sees something like -777 as a missing value rather than an actual value. We do so in the read_csv() command below using the **na** argument (not available). Note: use SHIFT-RETURN or SHIFT-ENTER to move the next line withing the read_csv() command. Failure to indicate the missing value codes within read_csv() will result in incorrect answers in most scenarios with missing data.
+When we load data with read_csv() we can indicate to the computer how missing values are represented. This ensures the computer sees something like -777 as a missing value rather than an actual value. We do so in the read_csv() command below using the **na** argument (not available). Note: use SHIFT-RETURN or SHIFT-ENTER to move the next line within the read_csv() command. Failure to indicate the missing value codes within read_csv() will result in incorrect answers in most scenarios with missing data.
 
 ```{r, eval = FALSE}
 okcupid_profiles <- read_csv(file = "data_okcupid.csv",
