@@ -367,7 +367,7 @@ summary(data_ratings)
 
 
 
-## A few key points about
+## A few key points about R
 
 Sometimes you will need to send a command additional information. Moreover, that information often needs to be grouped together into a vector or a list before you can send it to the command. We'll learn more about doing so in the future but here is a quick over view of vectors and lists to provide a foundation for future chapters.
 

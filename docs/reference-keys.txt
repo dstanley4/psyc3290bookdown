@@ -94,7 +94,7 @@ source-without-echo
 source-with-echo
 trying-source-with-echo
 more-practice
-a-few-key-points-about
+a-few-key-points-about-r
 vector-of-numbers
 vector-of-characters
 lists
