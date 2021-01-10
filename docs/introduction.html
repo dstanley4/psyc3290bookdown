@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-01-01" />
+<meta name="date" content="2021-01-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,11 +170,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
 </ul></li>
 <li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
-<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
-<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#more-practice"><i class="fa fa-check"></i><b>1.11</b> More practice</a></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.12</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.12.1</b> Lists</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.12</b> Revisiting read_csv()</a></li>
-<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.13</b> Revisiting read_csv()</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.14</b> That’s it!</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
 <li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
@@ -744,40 +745,62 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 ## </code></pre>
 <p>Congratulations you just ran your first script!</p>
 </div>
+<div id="more-practice" class="section level2">
+<h2><span class="header-section-number">1.11</span> More practice</h2>
+<p>Download the data_ratings.csv file from the Lab 1 folder on Courselink. Then go back to RStudio Cloud. Use the <strong>Upload</strong> button in RStudio Cloud to import the data_ratings.csv file. The button is displayed below.</p>
+<div class="figure"><span id="fig:uploadbutton"></span>
+<img src="ch_introduction/images/screenshot_upload_button.png" alt="Screenshot of upload button" width="35%" />
+<p class="caption">
+FIGURE 1.6: Screenshot of upload button
+</p>
+</div>
+<p>Then repeat the above exercise using the code below:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introduction.html#cb38-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb38-2"><a href="introduction.html#cb38-2"></a><span class="co"># By: John Smith</span></span>
+<span id="cb38-3"><a href="introduction.html#cb38-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb38-4"><a href="introduction.html#cb38-4"></a></span>
+<span id="cb38-5"><a href="introduction.html#cb38-5"></a>data_ratings &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_ratings.csv&quot;</span>)</span>
+<span id="cb38-6"><a href="introduction.html#cb38-6"></a></span>
+<span id="cb38-7"><a href="introduction.html#cb38-7"></a><span class="kw">head</span>(data_ratings)</span>
+<span id="cb38-8"><a href="introduction.html#cb38-8"></a></span>
+<span id="cb38-9"><a href="introduction.html#cb38-9"></a><span class="kw">tail</span>(data_ratings)</span>
+<span id="cb38-10"><a href="introduction.html#cb38-10"></a></span>
+<span id="cb38-11"><a href="introduction.html#cb38-11"></a><span class="kw">summary</span>(data_ratings)</span></code></pre></div>
+</div>
 <div id="a-few-key-points-about" class="section level2">
-<h2><span class="header-section-number">1.11</span> A few key points about</h2>
+<h2><span class="header-section-number">1.12</span> A few key points about</h2>
 <p>Sometimes you will need to send a command additional information. Moreover, that information often needs to be grouped together into a vector or a list before you can send it to the command. We’ll learn more about doing so in the future but here is a quick over view of vectors and lists to provide a foundation for future chapters.</p>
 <div id="vector-of-numbers" class="section level4">
-<h4><span class="header-section-number">1.11.0.1</span> Vector of numbers</h4>
+<h4><span class="header-section-number">1.12.0.1</span> Vector of numbers</h4>
 <p>We can create a vector of only numbers using the “c” function - which you can think of as being short for “combine” (or concatenate). In the commands below we create a vector of a few even numbers called “even_numbers”.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introduction.html#cb38-1"></a>even_numbers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="introduction.html#cb39-1"></a><span class="kw">print</span>(even_numbers)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="introduction.html#cb39-1"></a>even_numbers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="introduction.html#cb40-1"></a><span class="kw">print</span>(even_numbers)</span></code></pre></div>
 <pre><code>## [1]  2  4  6  8 10</code></pre>
 <p>We can obtain the second number in the vector using the following notation:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="introduction.html#cb41-1"></a><span class="kw">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="introduction.html#cb42-1"></a><span class="kw">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 </div>
 <div id="vector-of-characters" class="section level4">
-<h4><span class="header-section-number">1.11.0.2</span> Vector of characters</h4>
+<h4><span class="header-section-number">1.12.0.2</span> Vector of characters</h4>
 <p>We can also create vectors using only characters. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="introduction.html#cb43-1"></a>favourite_things &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
-<span id="cb43-2"><a href="introduction.html#cb43-2"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
-<span id="cb43-3"><a href="introduction.html#cb43-3"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="introduction.html#cb44-1"></a><span class="kw">print</span>(favourite_things)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="introduction.html#cb44-1"></a>favourite_things &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
+<span id="cb44-2"><a href="introduction.html#cb44-2"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
+<span id="cb44-3"><a href="introduction.html#cb44-3"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="introduction.html#cb45-1"></a><span class="kw">print</span>(favourite_things)</span></code></pre></div>
 <pre><code>## [1] &quot;copper kettles&quot;       &quot;woolen mittens&quot;      
 ## [3] &quot;brown paper packages&quot;</code></pre>
 <p>As before, can obtain the second item in the vector using the following notation:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="introduction.html#cb46-1"></a><span class="kw">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="introduction.html#cb47-1"></a><span class="kw">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] &quot;woolen mittens&quot;</code></pre>
 </div>
 <div id="lists" class="section level3">
-<h3><span class="header-section-number">1.11.1</span> Lists</h3>
+<h3><span class="header-section-number">1.12.1</span> Lists</h3>
 <p>Lists are similar to vectors in that you can create them and access items by their numeric position. Vectors must be all characters or all numbers. Lists can be a mix of characters or numbers. Most importantly items in lists can be accessed by their label. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line in the code below.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introduction.html#cb48-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
-<span id="cb48-2"><a href="introduction.html#cb48-2"></a>                <span class="dt">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
-<span id="cb48-3"><a href="introduction.html#cb48-3"></a>                <span class="dt">office_number =</span> <span class="dv">1913</span>)</span>
-<span id="cb48-4"><a href="introduction.html#cb48-4"></a></span>
-<span id="cb48-5"><a href="introduction.html#cb48-5"></a><span class="kw">print</span>(my_list)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="introduction.html#cb49-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
+<span id="cb49-2"><a href="introduction.html#cb49-2"></a>                <span class="dt">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
+<span id="cb49-3"><a href="introduction.html#cb49-3"></a>                <span class="dt">office_number =</span> <span class="dv">1913</span>)</span>
+<span id="cb49-4"><a href="introduction.html#cb49-4"></a></span>
+<span id="cb49-5"><a href="introduction.html#cb49-5"></a><span class="kw">print</span>(my_list)</span></code></pre></div>
 <pre><code>## $last_name
 ## [1] &quot;Smith&quot;
 ## 
@@ -787,25 +810,25 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 ## $office_number
 ## [1] 1913</code></pre>
 <p>You can access an item in a list using double brackets:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introduction.html#cb50-1"></a><span class="kw">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="introduction.html#cb51-1"></a><span class="kw">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## $first_name
 ## [1] &quot;John&quot;</code></pre>
 <p>You can access an item in a list by its label/name using the dollar sign:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="introduction.html#cb52-1"></a><span class="kw">print</span>(my_list<span class="op">$</span>last_name)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="introduction.html#cb53-1"></a><span class="kw">print</span>(my_list<span class="op">$</span>last_name)</span></code></pre></div>
 <pre><code>## [1] &quot;Smith&quot;</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="introduction.html#cb54-1"></a><span class="kw">print</span>(my_list<span class="op">$</span>office_number)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="introduction.html#cb55-1"></a><span class="kw">print</span>(my_list<span class="op">$</span>office_number)</span></code></pre></div>
 <pre><code>## [1] 1913</code></pre>
 </div>
 </div>
 <div id="revisiting-read_csv" class="section level2">
-<h2><span class="header-section-number">1.12</span> Revisiting read_csv()</h2>
+<h2><span class="header-section-number">1.13</span> Revisiting read_csv()</h2>
 <p>In the text above we learned about vectors of characters. This information can be used handle missing values in the read_csv() command. Consider a data set where for many participants we did not get a response to a question. We might have that represented in various ways within the data file. The value for that question might simply be omitted (i.e., represented by nothing – ""), represented by NA for not available, or maybe simply be something like -777.</p>
 <p>When we load data with read_csv() we can indicate to the computer how missing values are represented. This ensures the computer sees something like -777 as a missing value rather than an actual value. We do so in the read_csv() command below using the <strong>na</strong> argument (not available). Note: use SHIFT-RETURN or SHIFT-ENTER to move the next line within the read_csv() command. Failure to indicate the missing value codes within read_csv() will result in incorrect answers in most scenarios with missing data.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introduction.html#cb56-1"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
-<span id="cb56-2"><a href="introduction.html#cb56-2"></a>                             <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="introduction.html#cb57-1"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
+<span id="cb57-2"><a href="introduction.html#cb57-2"></a>                             <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
 </div>
 <div id="thats-it" class="section level2">
-<h2><span class="header-section-number">1.13</span> That’s it!</h2>
+<h2><span class="header-section-number">1.14</span> That’s it!</h2>
 <p>Congratulations! You’ve reached the end of the introduction to R. Take a break, have a cookie, and read some more about R tomorrow!</p>
 
 </div>

@@ -341,6 +341,31 @@ You should see the output below:
 
 Congratulations you just ran your first script!
 
+## More practice
+
+Download the data_ratings.csv file from the Lab 1 folder on Courselink. Then go back to RStudio Cloud. Use the **Upload** button in RStudio Cloud to import the data_ratings.csv file. The button is displayed below.
+
+```{r uploadbutton, fig.cap="Screenshot of upload button", echo = FALSE, out.width="35%"}
+knitr::include_graphics("ch_introduction/images/screenshot_upload_button.png")
+```
+
+Then repeat the above exercise using the code below:
+
+```{r, eval=FALSE}
+# Code written on: YYYY/MM/DD 
+# By: John Smith
+library(tidyverse)
+
+data_ratings <- read_csv(file = "data_ratings.csv")
+
+head(data_ratings)
+
+tail(data_ratings)
+
+summary(data_ratings)
+```
+
+
 
 ## A few key points about
 

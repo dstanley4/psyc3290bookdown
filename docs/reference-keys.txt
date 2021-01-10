@@ -4,6 +4,7 @@ fig:welcome
 fig:assignment
 fig:interface
 fig:sourcebutton
+fig:uploadbutton
 fig:showmap
 fig:addfill
 fig:colorcomparison
@@ -92,6 +93,7 @@ run-select-text
 source-without-echo
 source-with-echo
 trying-source-with-echo
+more-practice
 a-few-key-points-about
 vector-of-numbers
 vector-of-characters
