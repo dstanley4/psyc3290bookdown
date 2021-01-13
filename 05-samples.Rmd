@@ -583,7 +583,7 @@ Sample-level correlations, $r$, often differ from the population-level correlati
 
 We have the height and weight for 300000 people that comprise our population (fictitious data). 
 
-**Prior to using the data in RStudio Cloud you need to put the data into RStudio Cloud. You need 1) download the file to your local computer and then 2) upload it to RStudio Cloud.**
+**Prior to using the data in RStudio Cloud you need to put the data into RStudio Cloud. You need to 1) download the file to your local computer and then 2) upload it to RStudio Cloud.**
 
 1) The file with height and weight data can be downloaded [here](https://github.com/dstanley4/psyc3290bookdown/raw/main/data_cor_pop.csv). Be sure to right-click as use "Save link as" (or equivalent) to download the file -- or it will just appear as a webpage.
 
