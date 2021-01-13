@@ -752,10 +752,13 @@ r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma
       \tag{5.13}
 \end{equation}\]</span></p>
 <p>Sample-level correlations, <span class="math inline">\(r\)</span>, often differ from the population-level correlation (<span class="math inline">\(\rho\)</span>) due to sampling error. We can confirm that sample correlations are not substantially biased with a simulation. That is, we can confirm that the average of many sample correlations (<span class="math inline">\(r\)</span>) roughly equals the population correlation (<span class="math inline">\(\rho\)</span>) using a simulation. We say “roughly equal” because <span class="math inline">\(r\)</span> is technically a biased estimator of <span class="math inline">\(\rho\)</span> but the bias is sufficiently small that it can be ignored <span class="citation">(Schmidt and Hunter <a href="#ref-schmidt2014methods" role="doc-biblioref">2014</a>)</span>.</p>
-<p>We have the height and weight for 300000 people that comprise our population (fictious data). This data can be loaded with the commands below.</p>
-<p>Prior to loading the file you need to download it to your local computer. The file can be downloaded <a href="https://github.com/dstanley4/psyc3290bookdown/raw/main/data_cor_pop.csv">here</a>. Be sure to right-click as use “Save link as” (or equivalent) to download the file – or it will just appear as a webpage.</p>
-<p>You can see how to upload the file in <a href="https://dstanley4.github.io/psyc3290bookdown/introduction.html#more-practice">Chapter 1 here</a></p>
-<p>Once the file has been uploaded you can use the read_csv() command.</p>
+<p>We have the height and weight for 300000 people that comprise our population (fictitious data).</p>
+<p><strong>Prior to using the data in RStudio Cloud you need to put the data into RStudio Cloud. You need 1) download the file to your local computer and then 2) upload it to RStudio Cloud.</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The file with height and weight data can be downloaded <a href="https://github.com/dstanley4/psyc3290bookdown/raw/main/data_cor_pop.csv">here</a>. Be sure to right-click as use “Save link as” (or equivalent) to download the file – or it will just appear as a webpage.</p></li>
+<li><p>Now upload the file to RStudio Cloud so you can use it. You can see how to do this in <a href="https://dstanley4.github.io/psyc3290bookdown/introduction.html#more-practice">Chapter 1 here</a></p></li>
+</ol>
+<p>Once the file has been uploaded you can use the read_csv() command below.</p>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="sampling-accuracy.html#cb236-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb236-2"><a href="sampling-accuracy.html#cb236-2"></a>pop_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_cor_pop.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 

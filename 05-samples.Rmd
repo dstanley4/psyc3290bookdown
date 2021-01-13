@@ -581,14 +581,16 @@ r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma
 
 Sample-level correlations, $r$, often differ from the population-level correlation ($\rho$) due to sampling error. We can confirm that sample correlations are not substantially biased with a simulation. That is, we can confirm that the average of many sample correlations ($r$) roughly equals the population correlation ($\rho$) using a simulation. We say "roughly equal" because $r$ is technically a biased estimator of $\rho$ but the bias is sufficiently small that it can be ignored [@schmidt2014methods].
 
-We have the height and weight for 300000 people that comprise our population (fictious data). This data can be loaded with the commands below.
+We have the height and weight for 300000 people that comprise our population (fictitious data). 
 
-Prior to loading the file you need to download it to your local computer. The file can be downloaded [here](https://github.com/dstanley4/psyc3290bookdown/raw/main/data_cor_pop.csv). Be sure to right-click as use "Save link as" (or equivalent) to download the file -- or it will just appear as a webpage.
+**Prior to using the data in RStudio Cloud you need to put the data into RStudio Cloud. You need 1) download the file to your local computer and then 2) upload it to RStudio Cloud.**
+
+1) The file with height and weight data can be downloaded [here](https://github.com/dstanley4/psyc3290bookdown/raw/main/data_cor_pop.csv). Be sure to right-click as use "Save link as" (or equivalent) to download the file -- or it will just appear as a webpage.
 
 
-You can see how to upload the file in [Chapter 1 here](https://dstanley4.github.io/psyc3290bookdown/introduction.html#more-practice)
+2) Now upload the file to RStudio Cloud so you can use it. You can see how to do this in [Chapter 1 here](https://dstanley4.github.io/psyc3290bookdown/introduction.html#more-practice)
 
-Once the file has been uploaded you can use the read_csv() command.
+Once the file has been uploaded you can use the read_csv() command below.
 
 ```{r}
 library(tidyverse)
