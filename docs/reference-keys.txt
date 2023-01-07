@@ -63,7 +63,7 @@ fig:pipeline
 tab:betweenex
 tab:withinex
 tab:withintidyex
-week-1-friday-workshop
+introduction-to-r
 a-focus-on-workflow
 r-works-with-plug-ins
 software-choice
