@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Regression and correlation | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3290" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Regression and correlation | Welcome!" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Course notes for PSYC 3290" />
   <meta name="github-repo" content="dstanley4/psyc3290bookdown" />
@@ -24,7 +23,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2022-01-13" />
+<meta name="date" content="2023-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="an-emphasis-on-workflow.html"/>
 <link rel="next" href="multiple-regression.html"/>
-<script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -52,6 +50,7 @@
 
 
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/plotly-binding/plotly.js"></script>
@@ -100,7 +99,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -168,52 +167,56 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<li class="chapter" data-level="1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html"><i class="fa fa-check"></i><b>1</b> Week 1 Friday Workshop</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a>
+<li class="chapter" data-level="1.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
-<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
-<li class="chapter" data-level="1.5.3" data-path="introduction.html"><a href="introduction.html#cheatsheets"><i class="fa fa-check"></i><b>1.5.3</b> Cheatsheets</a></li>
+<li class="chapter" data-level="1.3.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#mac"><i class="fa fa-check"></i><b>1.3.1</b> Mac</a></li>
+<li class="chapter" data-level="1.3.2" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#pc"><i class="fa fa-check"></i><b>1.3.2</b> PC</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a>
+<li class="chapter" data-level="1.4" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#run-rstudio-not-r"><i class="fa fa-check"></i><b>1.4</b> Run RStudio not R</a></li>
+<li class="chapter" data-level="1.5" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#rstudio-configuration-first-run-only"><i class="fa fa-check"></i><b>1.5</b> RStudio configuration, First run only</a></li>
+<li class="chapter" data-level="1.6" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#begin-with-an-rstudio-project"><i class="fa fa-check"></i><b>1.6</b> Begin with an RStudio Project</a></li>
+<li class="chapter" data-level="1.7" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.7</b> Exploring the R Studio Interface</a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
-<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
-<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
-<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
-<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+<li class="chapter" data-level="1.7.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#console-panel"><i class="fa fa-check"></i><b>1.7.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.7.2" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#script-panel"><i class="fa fa-check"></i><b>1.7.2</b> Script Panel</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a>
+<li class="chapter" data-level="1.8" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.8</b> Writing your first script</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+<li class="chapter" data-level="1.8.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#create-the-script-file"><i class="fa fa-check"></i><b>1.8.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.8.2" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.8.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.8.3" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.8.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.8.4" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.8.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.8.5" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.8.5</b> Activate tidyverse auto-complete for your script</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a>
+<li class="chapter" data-level="1.9" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#loading-your-data"><i class="fa fa-check"></i><b>1.9</b> Loading your data</a>
 <ul>
-<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
-<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-your-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See your data in the Console</a></li>
-<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
-<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
-<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+<li class="chapter" data-level="1.9.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.9.1</b> Use read_csv (not read.csv) to open files.</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a>
+<li class="chapter" data-level="1.10" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.10</b> Checking out your data</a>
 <ul>
-<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
-<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
-<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+<li class="chapter" data-level="1.10.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.10.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.10.2" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.10.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.10.3" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.10.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.10.4" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.10.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.10.5" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.10.5</b> summary(): Quick summaries</a></li>
 </ul></li>
-<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
-<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a>
+<li class="chapter" data-level="1.11" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.11</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a>
 <ul>
-<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+<li class="chapter" data-level="1.11.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#run-select-text"><i class="fa fa-check"></i><b>1.11.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.11.2" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#source-without-echo"><i class="fa fa-check"></i><b>1.11.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.11.3" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#source-with-echo"><i class="fa fa-check"></i><b>1.11.3</b> Source with Echo</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.12</b> Revisiting read_csv()</a></li>
-<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#importing-to-rstudio-cloud"><i class="fa fa-check"></i><b>1.13</b> Importing to RStudio Cloud</a></li>
-<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.14</b> That’s it!</a></li>
+<li class="chapter" data-level="1.12" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.12</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.13" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.13</b> A few key points about</a>
+<ul>
+<li class="chapter" data-level="1.13.1" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#lists"><i class="fa fa-check"></i><b>1.13.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.14" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.14</b> Revisiting read_csv()</a></li>
+<li class="chapter" data-level="1.15" data-path="week-1-friday-workshop.html"><a href="week-1-friday-workshop.html#thats-it"><i class="fa fa-check"></i><b>1.15</b> That’s it!</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a>
 <ul>
@@ -282,7 +285,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3.12" data-path="graphing.html"><a href="graphing.html#saving"><i class="fa fa-check"></i><b>3.12</b> Saving</a>
 <ul>
-<li class="chapter" data-level="3.12.1" data-path="graphing.html"><a href="graphing.html#mac"><i class="fa fa-check"></i><b>3.12.1</b> MAC</a></li>
+<li class="chapter" data-level="3.12.1" data-path="graphing.html"><a href="graphing.html#mac-1"><i class="fa fa-check"></i><b>3.12.1</b> MAC</a></li>
 <li class="chapter" data-level="3.12.2" data-path="graphing.html"><a href="graphing.html#pc-or-mac"><i class="fa fa-check"></i><b>3.12.2</b> PC or MAC</a></li>
 </ul></li>
 </ul></li>
@@ -460,8 +463,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="regression-and-correlation" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Regression and correlation</h1>
+<div id="regression-and-correlation" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Regression and correlation<a href="regression-and-correlation.html#regression-and-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The following CRAN packages must be installed:</p>
 <table>
 <thead>
@@ -499,12 +502,12 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<div id="population-example" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Population example</h2>
+<div id="population-example" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Population example<a href="regression-and-correlation.html#population-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="ch_correlation/images/tetris.png" width="320" /></p>
 <p>Consider the following the scenario, we want to examine the extent to which IQ predicts video game scores for people who live in the City of Guelph. We want to make conclusions about people who live in the City of Guelph so we refer to Guelph citizens as our population. Because we are interested in using IQ to predict video game score we refer to IQ as the <strong>predictor</strong>. The value being predicted is video game score and we refer to that variable as the <strong>criterion</strong> (i.e., the dependent variable). Imagine, for a moment, that we are actually able to get an IQ and a video game score for everyone in the City of Guelph (<em>N</em> = 100,000).</p>
-<div id="no-predictor" class="section level3" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> No predictor</h3>
+<div id="no-predictor" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> No predictor<a href="regression-and-correlation.html#no-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We illustrate the range and variability of video game scores for everyone in the population below. There are 100,000 blue dots on this graph. Each blue dot represents a person in the <strong>population</strong>. The vertical position of the dot indicates each person’s video game.</p>
 <ul>
 <li><p>Notice the large number of dots (i.e., people) - there are so many that it’s hard to see individual dots/people.</p></li>
@@ -517,14 +520,14 @@ div.csl-indent {
 <p>Without a predictor variable, our best estimate of a person’s video game score is the population mean. Moreover, without a predictor, we have the same estimate for everyone in the population - the mean video game score for the population. We have no way of creating an individualized estimate of someone’s video game score. The mean video game score is illustrated in the figure below with a horizontal green line.</p>
 <p><img src="ch_correlation/images/pop_graph_mean.png" width="70%" /></p>
 </div>
-<div id="weak-relation" class="section level3" number="8.1.2">
-<h3><span class="header-section-number">8.1.2</span> Weak relation</h3>
+<div id="weak-relation" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Weak relation<a href="regression-and-correlation.html#weak-relation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can plot a variable (e.g., extraversion) against video game score to see if there is a relation between the two. In this case there doesn’t appear to be a relation. Indeed, this graph illustrates a zero correlation between extraversion and video game scores - the weakest possible relation for a predictor. Effectively, there is no linear relation between extraversion and video game scores.</p>
 <p>As before, we place a horizontal green line on the graph to indicate the mean video game score. We also place a red regression line (i.e., best-fit line) on the graph; however, the red line is completely hidden by the green line representing the mean video game score. In this case, with these data, knowing a person’s extraversion score <strong>does not</strong> allow us to provide an individualized estimate of a person’s video game score. As a result, extraversion does not help us explain the variability in video game scores. That is, extraversion scores do not allow us to explain why some people have high video game score whereas other people have low video game scores.</p>
 <p><img src="ch_correlation/images/pop_graph_extraversion_mean.png" width="70%" /></p>
 </div>
-<div id="strong-relation" class="section level3" number="8.1.3">
-<h3><span class="header-section-number">8.1.3</span> Strong relation</h3>
+<div id="strong-relation" class="section level3 hasAnchor" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Strong relation<a href="regression-and-correlation.html#strong-relation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What if we were to try another variable – like IQ? The graph below illustrates a positive linear relation between IQ and video game score. As before, we place a green horizontal line on the graph to indicate the population mean. Additionally, we place a red regression line (i.e., a best-fit line) on the graph. This red regression line represents, for each person, an individualized estimate of video game score based on their IQ. The population-level regression line has the slope 8.00; which indicate that as IQ increase by 1.0 point video game score increases by 8.00 points. The equation for the regression line is:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -578,8 +581,8 @@ R^2  = \rho^2
 <p>In the next section we use sample-level data to estimate these population-level values.</p>
 </div>
 </div>
-<div id="consider-a-sample" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Consider a sample</h2>
+<div id="consider-a-sample" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Consider a sample<a href="regression-and-correlation.html#consider-a-sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Unfortunately, we never/rarely have data for everyone in the population (in this example everyone in the City of Guelph). Consequently, we usually have to select a subset of the population as a sample and use sample data for our analyses. In the figure below there are 100,000 blue dots - each dot represents an individual in the population. Additionally, there are also 9 black dots. These black dots are a random subset of the population – our sample. We will use the data from our sample (i.e., the 9 black dots) to estimate the slope, correlation, and <span class="math inline">\(R^2\)</span> for the population (i.e., the 100,000 blue dots).</p>
 <p><img src="ch_correlation/images/pop_sample_graph.png" width="70%" /></p>
 <p>We always need to remember the values calculated from our sample (statistics) are only estimates of the population-level parameters; estimates that are likely are likely to differ from population parameters due to sampling error.</p>
@@ -648,23 +651,23 @@ R^2 &amp;= \frac{\text{Variance of predicted scores}}{\text{Variance of actual s
 &amp;= \frac{SS_{Regression}}{SS_{Total}}\\
 \end{aligned}
 \]</span></p>
-<div id="regression" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Regression</h3>
+<div id="regression" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Regression<a href="regression-and-correlation.html#regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s obtain the actual value for <span class="math inline">\(R^2\)</span>, as well as the slope, using R. We can obtain the regression model (i.e.. linear model or lm) using the command below:</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="regression-and-correlation.html#cb326-1" aria-hidden="true" tabindex="-1"></a>lm_object <span class="ot">&lt;-</span> <span class="fu">lm</span>(video_game <span class="sc">~</span> iq,</span>
-<span id="cb326-2"><a href="regression-and-correlation.html#cb326-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> sample_data)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="regression-and-correlation.html#cb309-1" aria-hidden="true" tabindex="-1"></a>lm_object <span class="ot">&lt;-</span> <span class="fu">lm</span>(video_game <span class="sc">~</span> iq,</span>
+<span id="cb309-2"><a href="regression-and-correlation.html#cb309-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> sample_data)</span></code></pre></div>
 <p>We display the result using apaTables:</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="regression-and-correlation.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(apaTables)</span>
-<span id="cb327-2"><a href="regression-and-correlation.html#cb327-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb327-3"><a href="regression-and-correlation.html#cb327-3" aria-hidden="true" tabindex="-1"></a><span class="fu">apa.reg.table</span>(lm_object,</span>
-<span id="cb327-4"><a href="regression-and-correlation.html#cb327-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">table.number =</span> <span class="dv">1</span>,</span>
-<span id="cb327-5"><a href="regression-and-correlation.html#cb327-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">filename =</span> <span class="st">&quot;regression_table.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="regression-and-correlation.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(apaTables)</span>
+<span id="cb310-2"><a href="regression-and-correlation.html#cb310-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb310-3"><a href="regression-and-correlation.html#cb310-3" aria-hidden="true" tabindex="-1"></a><span class="fu">apa.reg.table</span>(lm_object,</span>
+<span id="cb310-4"><a href="regression-and-correlation.html#cb310-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">table.number =</span> <span class="dv">1</span>,</span>
+<span id="cb310-5"><a href="regression-and-correlation.html#cb310-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">filename =</span> <span class="st">&quot;regression_table.doc&quot;</span>)</span></code></pre></div>
 <p>Which produces the output:</p>
 <p><img src="ch_correlation/images/regression_output.png" width="1018" /></p>
 <p>If we examine the fit column on the far right of the output above we see <span class="math inline">\(R^2\)</span> = .74, 95% CI [.17, .86]. This value indicates that in this sample 74% of the variability in video scores is accounted accounted for by the statistical model (i.e., red regression line). The confidence interval suggests a plausible range of values for the <span class="math inline">\(R^2\)</span> at the population-level is .17 to .86. Notice that this range captures that population-level <span class="math inline">\(R^2\)</span> of .36 that we calculated from the entire population previously.</p>
 <p><span class="math display">\[
 \begin{aligned}
-R^2 &amp;= .736 = .74\\\\ 
+R^2 &amp;= .736 = .74\\\\
 \end{aligned}
 \]</span></p>
 <p>If we examine the b column in the output we can create the regression equations below:</p>
@@ -676,7 +679,7 @@ R^2 &amp;= .736 = .74\\\\
 \]</span></p>
 <p>This tells use the slope in our sample is 9.44, 95% CI [4.39, 14.50]. That is, in the sample, each IQ point is associated with an additional 9.44 points in the video game. The population regression line might have a smaller/larger slope. The 95% confidence intervals tells us that a plausible range of values for the slope of the regression line at the population-level is 4.39 to 14.50. Notice that this range captures that population-level slope of 8.00 that we calculated from the entire population previously.</p>
 <p>Additional regression details are provided with the command below.</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="regression-and-correlation.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_object)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="regression-and-correlation.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_object)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = video_game ~ iq, data = sample_data)
@@ -697,8 +700,8 @@ R^2 &amp;= .736 = .74\\\\
 ## Multiple R-squared:  0.736,  Adjusted R-squared:  0.698 
 ## F-statistic: 19.5 on 1 and 7 DF,  p-value: 0.00309</code></pre>
 </div>
-<div id="correlation" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Correlation</h3>
+<div id="correlation" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Correlation<a href="regression-and-correlation.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As discussed previously, a correlation can be considered a fit index for a linear regression line. That is, a correlation indicates the extent to which the data fit a straight line (i.e., the extent to which the data fit a linear model). Correlation values range between -1 and +1. The further a correlation value is from 0 the more tightly points will cluster around the regression line.</p>
 <ul>
 <li><p>A <strong>positive correlation</strong> indicates that as one value <strong>increases</strong> the other value <strong>increases</strong>. For example, as height increases weight increases.</p></li>
@@ -707,8 +710,8 @@ R^2 &amp;= .736 = .74\\\\
 <p>A few possible <strong>positive</strong> correlations are illustrated below – notice the relation between the graph and the strength of the correlation.</p>
 <p><img src="ch_correlation/images/cor_mag.png" width="80%" height="80%" /></p>
 <p>You can obtain the correlation from our sample data with the command below:</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="regression-and-correlation.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(sample_data<span class="sc">$</span>iq, sample_data<span class="sc">$</span>video_game, </span>
-<span id="cb330-2"><a href="regression-and-correlation.html#cb330-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">na.action =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="regression-and-correlation.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(sample_data<span class="sc">$</span>iq, sample_data<span class="sc">$</span>video_game, </span>
+<span id="cb313-2"><a href="regression-and-correlation.html#cb313-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">na.action =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -723,32 +726,32 @@ R^2 &amp;= .736 = .74\\\\
 <p>From this output we extract the numbers below in APA reporting style:</p>
 <p>There was a positive relation between IQ and video game score, such that as IQ increased, so did video game score, <span class="math inline">\(r\)</span> = .86, 95% CI[.45, .97], <span class="math inline">\(p\)</span> = .003, <em>N</em> = 9.</p>
 </div>
-<div id="graphing-1" class="section level3" number="8.2.3">
-<h3><span class="header-section-number">8.2.3</span> Graphing</h3>
+<div id="graphing-1" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Graphing<a href="regression-and-correlation.html#graphing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A scatter plot can be made code below:</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="regression-and-correlation.html#cb332-1" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> sample_data, </span>
-<span id="cb332-2"><a href="regression-and-correlation.html#cb332-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> iq, <span class="at">y =</span> video_game)) <span class="sc">+</span> </span>
-<span id="cb332-3"><a href="regression-and-correlation.html#cb332-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb332-4"><a href="regression-and-correlation.html#cb332-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">140</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">400</span>, <span class="dv">1500</span>)) <span class="sc">+</span></span>
-<span id="cb332-5"><a href="regression-and-correlation.html#cb332-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">400</span>, <span class="dv">1500</span>, <span class="at">by =</span> <span class="dv">200</span>)) <span class="sc">+</span> </span>
-<span id="cb332-6"><a href="regression-and-correlation.html#cb332-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">70</span>, <span class="dv">140</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb332-7"><a href="regression-and-correlation.html#cb332-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;IQ&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Video Game Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb332-8"><a href="regression-and-correlation.html#cb332-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="dv">24</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="regression-and-correlation.html#cb315-1" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> sample_data, </span>
+<span id="cb315-2"><a href="regression-and-correlation.html#cb315-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> iq, <span class="at">y =</span> video_game)) <span class="sc">+</span> </span>
+<span id="cb315-3"><a href="regression-and-correlation.html#cb315-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb315-4"><a href="regression-and-correlation.html#cb315-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">140</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">400</span>, <span class="dv">1500</span>)) <span class="sc">+</span></span>
+<span id="cb315-5"><a href="regression-and-correlation.html#cb315-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">400</span>, <span class="dv">1500</span>, <span class="at">by =</span> <span class="dv">200</span>)) <span class="sc">+</span> </span>
+<span id="cb315-6"><a href="regression-and-correlation.html#cb315-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">70</span>, <span class="dv">140</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb315-7"><a href="regression-and-correlation.html#cb315-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;IQ&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Video Game Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb315-8"><a href="regression-and-correlation.html#cb315-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="dv">24</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="comparing-correlations" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Comparing correlations</h2>
+<div id="comparing-correlations" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Comparing correlations<a href="regression-and-correlation.html#comparing-correlations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this part of the chapter we compare correlations within and across studies we do so with the cocor package. We begin by obtaining a data set from the psych package. Note that we <strong>do not</strong> use the library(psych) command due to conflicts with the tidyverse.</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="regression-and-correlation.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain the bfi data set from the psych package</span></span>
-<span id="cb333-2"><a href="regression-and-correlation.html#cb333-2" aria-hidden="true" tabindex="-1"></a>bfi <span class="ot">&lt;-</span> psych<span class="sc">::</span>bfi</span>
-<span id="cb333-3"><a href="regression-and-correlation.html#cb333-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb333-4"><a href="regression-and-correlation.html#cb333-4" aria-hidden="true" tabindex="-1"></a><span class="co"># remove empty rows/columns and clean the variable names</span></span>
-<span id="cb333-5"><a href="regression-and-correlation.html#cb333-5" aria-hidden="true" tabindex="-1"></a>bfi <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb333-6"><a href="regression-and-correlation.html#cb333-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb333-7"><a href="regression-and-correlation.html#cb333-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb333-8"><a href="regression-and-correlation.html#cb333-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="regression-and-correlation.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain the bfi data set from the psych package</span></span>
+<span id="cb316-2"><a href="regression-and-correlation.html#cb316-2" aria-hidden="true" tabindex="-1"></a>bfi <span class="ot">&lt;-</span> psych<span class="sc">::</span>bfi</span>
+<span id="cb316-3"><a href="regression-and-correlation.html#cb316-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb316-4"><a href="regression-and-correlation.html#cb316-4" aria-hidden="true" tabindex="-1"></a><span class="co"># remove empty rows/columns and clean the variable names</span></span>
+<span id="cb316-5"><a href="regression-and-correlation.html#cb316-5" aria-hidden="true" tabindex="-1"></a>bfi <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb316-6"><a href="regression-and-correlation.html#cb316-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb316-7"><a href="regression-and-correlation.html#cb316-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb316-8"><a href="regression-and-correlation.html#cb316-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
 <p>Check out the large number of columns.</p>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="regression-and-correlation.html#cb334-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="regression-and-correlation.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi)</span></code></pre></div>
 <pre><code>## Rows: 2,800
 ## Columns: 28
 ## $ a1        &lt;int&gt; 2, 2, 5, 4, 2, 6, 2, 4, 4, 2, 4, 2, 5, 5…
@@ -780,10 +783,10 @@ R^2 &amp;= .736 = .74\\\\
 ## $ education &lt;int&gt; NA, NA, NA, NA, NA, 3, NA, 2, 1, NA, 1, …
 ## $ age       &lt;int&gt; 16, 18, 17, 17, 17, 21, 18, 19, 19, 17, …</code></pre>
 <p>Let’s select a small subset of the columns for our example:</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="regression-and-correlation.html#cb336-1" aria-hidden="true" tabindex="-1"></a>bfi <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb336-2"><a href="regression-and-correlation.html#cb336-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(a1, c1, e1, o1, gender)</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="regression-and-correlation.html#cb319-1" aria-hidden="true" tabindex="-1"></a>bfi <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb319-2"><a href="regression-and-correlation.html#cb319-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(a1, c1, e1, o1, gender)</span></code></pre></div>
 <p>You can confirm the smaller set of columns:</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="regression-and-correlation.html#cb337-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="regression-and-correlation.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi)</span></code></pre></div>
 <pre><code>## Rows: 2,800
 ## Columns: 5
 ## $ a1     &lt;int&gt; 2, 2, 5, 4, 2, 6, 2, 4, 4, 2, 4, 2, 5, 5, 4…
@@ -799,8 +802,8 @@ R^2 &amp;= .736 = .74\\\\
 <li><p>o1 (Opennness)</p></li>
 </ul>
 <p>You can obtain a condensed correlation matrix using the cor() command. You can specify use = “pairwise.complete.obs” for pairwise correlation - the documentation covers other options. The round(2) command rounds the correlations to two decimal places.</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="regression-and-correlation.html#cb339-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(bfi, <span class="at">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb339-2"><a href="regression-and-correlation.html#cb339-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="regression-and-correlation.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(bfi, <span class="at">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb322-2"><a href="regression-and-correlation.html#cb322-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##           a1    c1    e1    o1 gender
 ## a1      1.00  0.03  0.11  0.01  -0.16
 ## c1      0.03  1.00 -0.02  0.17   0.01
@@ -808,17 +811,17 @@ R^2 &amp;= .736 = .74\\\\
 ## o1      0.01  0.17 -0.10  1.00  -0.10
 ## gender -0.16  0.01 -0.13 -0.10   1.00</code></pre>
 <p>Or we could use apaTable apa.cor.table() command:</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="regression-and-correlation.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(apaTables)</span>
-<span id="cb341-2"><a href="regression-and-correlation.html#cb341-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb341-3"><a href="regression-and-correlation.html#cb341-3" aria-hidden="true" tabindex="-1"></a><span class="fu">apa.cor.table</span>(bfi,</span>
-<span id="cb341-4"><a href="regression-and-correlation.html#cb341-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">table.number =</span> <span class="dv">1</span>,</span>
-<span id="cb341-5"><a href="regression-and-correlation.html#cb341-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">filename =</span> <span class="st">&quot;table_1_bfi.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="regression-and-correlation.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(apaTables)</span>
+<span id="cb324-2"><a href="regression-and-correlation.html#cb324-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb324-3"><a href="regression-and-correlation.html#cb324-3" aria-hidden="true" tabindex="-1"></a><span class="fu">apa.cor.table</span>(bfi,</span>
+<span id="cb324-4"><a href="regression-and-correlation.html#cb324-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">table.number =</span> <span class="dv">1</span>,</span>
+<span id="cb324-5"><a href="regression-and-correlation.html#cb324-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">filename =</span> <span class="st">&quot;table_1_bfi.doc&quot;</span>)</span></code></pre></div>
 <p><img src="ch_correlation/images/table1_bfi.png" width="80%" /></p>
 <p>Inspecting the above table you see that the correlation between a1 and c1 with is <em>r</em> = .03, 95% CI [-.01, .07]. Likewise, the correlation between e1 and o1 is <em>r</em> = -.10, 95% CI [-.14, -.06]. We obtain the <em>p</em>-values for these relations below.</p>
-<div id="p-values" class="section level3" number="8.3.1">
-<h3><span class="header-section-number">8.3.1</span> p-values</h3>
+<div id="p-values" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> p-values<a href="regression-and-correlation.html#p-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The code below obtains the <em>p</em>-value for the a1/c1 relation - a value of .144.</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="regression-and-correlation.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>a1, bfi<span class="sc">$</span>c1)</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="regression-and-correlation.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>a1, bfi<span class="sc">$</span>c1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -831,7 +834,7 @@ R^2 &amp;= .736 = .74\\\\
 ##    cor 
 ## 0.0278</code></pre>
 <p>The code below obtains the <em>p</em>-value for the e1/o1 relation - a value sufficiently small we report it as <span class="math inline">\(p\)</span> &lt; .001</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="regression-and-correlation.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>e1, bfi<span class="sc">$</span>o1)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="regression-and-correlation.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>e1, bfi<span class="sc">$</span>o1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -846,16 +849,16 @@ R^2 &amp;= .736 = .74\\\\
 <p>With <em>p</em>-values in hand we can write this up as:</p>
 <p>Inspecting the above table you see that the correlation between a1 and c1 with is <em>r</em> = .03, 95% CI [-.01, .07], <em>p</em> = .144. Likewise, the correlation between e1 and o1 is <em>r</em> = -.10, 95% CI [-.14, -.06], <em>p</em> &lt; .001.</p>
 </div>
-<div id="within-a-data-set" class="section level3" number="8.3.2">
-<h3><span class="header-section-number">8.3.2</span> Within a data set</h3>
+<div id="within-a-data-set" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Within a data set<a href="regression-and-correlation.html#within-a-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this section we look at comparing correlation within a single data set.</p>
-<div id="non-overlapping-correlations" class="section level4" number="8.3.2.1">
-<h4><span class="header-section-number">8.3.2.1</span> Non-overlapping correlations</h4>
+<div id="non-overlapping-correlations" class="section level4 hasAnchor" number="8.3.2.1">
+<h4><span class="header-section-number">8.3.2.1</span> Non-overlapping correlations<a href="regression-and-correlation.html#non-overlapping-correlations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will compare the correlation to between (a1, c1) to the correlation between (e1, o1) with the cocor package. In this case, because neither of the variables in the first correlation (a1, c1) are in the second correlation (e1, o1) we refer to this as a non-overlapping correlation comparison.</p>
 <p>The cocor command will provide a lot of output. We are most interested in the last part of the output corresponding to Zou (2007) which provides the confidence interval for the difference in the correlations. But we also want to examine the first part of the output which will show us the two original correlations (a1, c1) = 0.0276, and (e1, o1) = -0.1002 (these are the .03 and -.10 values prior to rounding). As well it also shows us the difference between them, Difference: r.jk - r.hm = 0.1278.</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="regression-and-correlation.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cocor)</span>
-<span id="cb346-2"><a href="regression-and-correlation.html#cb346-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb346-3"><a href="regression-and-correlation.html#cb346-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cocor</span>( <span class="sc">~</span> a1 <span class="sc">+</span> c1 <span class="sc">|</span> e1 <span class="sc">+</span> o1, <span class="at">data =</span> <span class="fu">as.data.frame</span>(bfi))</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="regression-and-correlation.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cocor)</span>
+<span id="cb329-2"><a href="regression-and-correlation.html#cb329-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb329-3"><a href="regression-and-correlation.html#cb329-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cocor</span>( <span class="sc">~</span> a1 <span class="sc">+</span> c1 <span class="sc">|</span> e1 <span class="sc">+</span> o1, <span class="at">data =</span> <span class="fu">as.data.frame</span>(bfi))</span></code></pre></div>
 <pre><code>## 
 ##   Results of a comparison of two nonoverlapping correlations based on dependent groups
 ## 
@@ -894,11 +897,11 @@ R^2 &amp;= .736 = .74\\\\
 <p>We could write this as:</p>
 <p>There was a negative weak relation between extraversion (e1) and openness (o1) such that as extraversion increased openness decreased, <em>r</em> = -.10, 95% CI [-.14, -.06], <em>p</em> &lt; .001. In contrast, the relation between agreeableness (a1) and conscientiousness(c1) was non-significant, <em>r</em> = .03, 95% CI [-.01, .07], <em>p</em> = .144. The extraversion/openness relation was stronger than the agreeableness/conscientiousness relation, <span class="math inline">\(\Delta\)</span><em>r</em> = .13, 95% CI [.07, .18], <em>p</em> &lt; .001.</p>
 </div>
-<div id="overlapping-correlations" class="section level4" number="8.3.2.2">
-<h4><span class="header-section-number">8.3.2.2</span> Overlapping correlations</h4>
+<div id="overlapping-correlations" class="section level4 hasAnchor" number="8.3.2.2">
+<h4><span class="header-section-number">8.3.2.2</span> Overlapping correlations<a href="regression-and-correlation.html#overlapping-correlations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will compare the correlation to between (a1, c1) to the correlation between (a1, e1) with cocor. In this case, because a1 is common to the first correlation (a1, c1) and the second correlation (e1, o1) we refer to this as an overlapping correlation comparison.</p>
 <p>We obtain the (a1, e1) correlation, below, and find: <em>r</em> = .11, 95% [.07, .14], <em>p</em> &lt; .001.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="regression-and-correlation.html#cb348-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>a1, bfi<span class="sc">$</span>e1)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="regression-and-correlation.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>a1, bfi<span class="sc">$</span>e1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -911,7 +914,7 @@ R^2 &amp;= .736 = .74\\\\
 ##    cor 
 ## 0.1062</code></pre>
 <p>We obtain the (a1, c1) correlation, below, and find: <em>r</em> = .03, 95% [-.00, .07], <em>p</em> = .14.</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="regression-and-correlation.html#cb350-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>a1, bfi<span class="sc">$</span>c1)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="regression-and-correlation.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi<span class="sc">$</span>a1, bfi<span class="sc">$</span>c1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -924,9 +927,9 @@ R^2 &amp;= .736 = .74\\\\
 ##    cor 
 ## 0.0278</code></pre>
 <p>We use the cocor command to compare the two relations:</p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="regression-and-correlation.html#cb352-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cocor)</span>
-<span id="cb352-2"><a href="regression-and-correlation.html#cb352-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb352-3"><a href="regression-and-correlation.html#cb352-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cocor</span>( <span class="sc">~</span> a1 <span class="sc">+</span> c1 <span class="sc">|</span> a1 <span class="sc">+</span> e1, <span class="at">data =</span> <span class="fu">as.data.frame</span>(bfi))</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="regression-and-correlation.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cocor)</span>
+<span id="cb335-2"><a href="regression-and-correlation.html#cb335-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb335-3"><a href="regression-and-correlation.html#cb335-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cocor</span>( <span class="sc">~</span> a1 <span class="sc">+</span> c1 <span class="sc">|</span> a1 <span class="sc">+</span> e1, <span class="at">data =</span> <span class="fu">as.data.frame</span>(bfi))</span></code></pre></div>
 <pre><code>## 
 ##   Results of a comparison of two overlapping correlations based on dependent groups
 ## 
@@ -985,28 +988,28 @@ R^2 &amp;= .736 = .74\\\\
 <p>Agreeableness and extraversion were weakly related, <em>r</em> = .11, 95% [.07, .14], <em>p</em> &lt; .001, such that as agreeableness increased so did extraversion. The relation between agreeableness and conscientiousness was non-significant, <em>r</em> = .03, 95% [-.00, .07], <em>p</em> = .14. The agreeableness/extraversion relation was significantly stronger than the agreeableness/conscientiousness relation, <span class="math inline">\(\Delta\)</span><em>r</em> = .08, 95% CI [.03, .13], <em>p</em> = .004.</p>
 </div>
 </div>
-<div id="between-data-sets" class="section level3" number="8.3.3">
-<h3><span class="header-section-number">8.3.3</span> Between data sets</h3>
+<div id="between-data-sets" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Between data sets<a href="regression-and-correlation.html#between-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this section we look at comparing correlations from two data sets.</p>
-<div id="create-seperate-data-files-for-men-and-women-if-needed" class="section level4" number="8.3.3.1">
-<h4><span class="header-section-number">8.3.3.1</span> Create seperate data files for men and women (if needed)</h4>
+<div id="create-seperate-data-files-for-men-and-women-if-needed" class="section level4 hasAnchor" number="8.3.3.1">
+<h4><span class="header-section-number">8.3.3.1</span> Create seperate data files for men and women (if needed)<a href="regression-and-correlation.html#create-seperate-data-files-for-men-and-women-if-needed" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We begin by creating two separate data sets - one for men and one for women:</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="regression-and-correlation.html#cb354-1" aria-hidden="true" tabindex="-1"></a>bfi_men   <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb354-2"><a href="regression-and-correlation.html#cb354-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb354-3"><a href="regression-and-correlation.html#cb354-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>gender)</span>
-<span id="cb354-4"><a href="regression-and-correlation.html#cb354-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-5"><a href="regression-and-correlation.html#cb354-5" aria-hidden="true" tabindex="-1"></a>bfi_women <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb354-6"><a href="regression-and-correlation.html#cb354-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb354-7"><a href="regression-and-correlation.html#cb354-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>gender)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="regression-and-correlation.html#cb337-1" aria-hidden="true" tabindex="-1"></a>bfi_men   <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb337-2"><a href="regression-and-correlation.html#cb337-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb337-3"><a href="regression-and-correlation.html#cb337-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>gender)</span>
+<span id="cb337-4"><a href="regression-and-correlation.html#cb337-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb337-5"><a href="regression-and-correlation.html#cb337-5" aria-hidden="true" tabindex="-1"></a>bfi_women <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb337-6"><a href="regression-and-correlation.html#cb337-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb337-7"><a href="regression-and-correlation.html#cb337-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>gender)</span></code></pre></div>
 <p>Use glimpse() to check out the subgroups. Note that it also tells you the number of participants in each subgroup.</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="regression-and-correlation.html#cb355-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi_men)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="regression-and-correlation.html#cb338-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi_men)</span></code></pre></div>
 <pre><code>## Rows: 919
 ## Columns: 4
 ## $ a1 &lt;int&gt; 2, 2, 2, 4, 4, 4, 2, 5, 4, 4, 5, 5, 1, 4, 1, 4,…
 ## $ c1 &lt;int&gt; 2, 4, 5, 3, 6, 4, 5, 4, 5, 5, 5, 4, 4, 5, 1, 4,…
 ## $ e1 &lt;int&gt; 3, 2, 4, 3, 5, 1, 3, 2, 3, 1, 2, 3, 2, 3, 6, 2,…
 ## $ o1 &lt;int&gt; 3, 3, 5, 3, 6, 5, 4, 5, 5, 6, 5, 6, 6, 6, 6, 4,…</code></pre>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="regression-and-correlation.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi_women)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="regression-and-correlation.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bfi_women)</span></code></pre></div>
 <pre><code>## Rows: 1,881
 ## Columns: 4
 ## $ a1 &lt;int&gt; 2, 5, 4, 6, 2, 5, 4, 4, 4, 1, 2, 1, 2, 2, 2, 4,…
@@ -1014,10 +1017,10 @@ R^2 &amp;= .736 = .74\\\\
 ## $ e1 &lt;int&gt; 1, 2, 5, 2, 2, 3, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1,…
 ## $ o1 &lt;int&gt; 4, 4, 3, 4, 5, 4, 5, 4, 4, 5, 6, 6, 5, 6, 2, 4,…</code></pre>
 </div>
-<div id="check-out-the-subgroup-correlations" class="section level4" number="8.3.3.2">
-<h4><span class="header-section-number">8.3.3.2</span> Check out the subgroup correlations</h4>
+<div id="check-out-the-subgroup-correlations" class="section level4 hasAnchor" number="8.3.3.2">
+<h4><span class="header-section-number">8.3.3.2</span> Check out the subgroup correlations<a href="regression-and-correlation.html#check-out-the-subgroup-correlations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For <strong>men</strong>, we can obtain the correlation between a1/e1 with the code below. From this we determine, <em>r</em> = .14, 95% [.07, .20], <em>p</em> &lt; .001.</p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="regression-and-correlation.html#cb359-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi_men<span class="sc">$</span>a1, bfi_men<span class="sc">$</span>e1)</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="regression-and-correlation.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi_men<span class="sc">$</span>a1, bfi_men<span class="sc">$</span>e1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1030,7 +1033,7 @@ R^2 &amp;= .736 = .74\\\\
 ##    cor 
 ## 0.1387</code></pre>
 <p>For <strong>women</strong>, we can obtain the correlation between a1/e1 with the code below. From this we determine, <em>r</em> = .06, 95% [.02, .11], <em>p</em> = .007.</p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="regression-and-correlation.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi_women<span class="sc">$</span>a1, bfi_women<span class="sc">$</span>e1)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="regression-and-correlation.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bfi_women<span class="sc">$</span>a1, bfi_women<span class="sc">$</span>e1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1043,15 +1046,15 @@ R^2 &amp;= .736 = .74\\\\
 ##     cor 
 ## 0.06226</code></pre>
 </div>
-<div id="comparison-ra1-e1" class="section level4" number="8.3.3.3">
-<h4><span class="header-section-number">8.3.3.3</span> Comparison r(a1, e1)</h4>
+<div id="comparison-ra1-e1" class="section level4 hasAnchor" number="8.3.3.3">
+<h4><span class="header-section-number">8.3.3.3</span> Comparison r(a1, e1)<a href="regression-and-correlation.html#comparison-ra1-e1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We run the R commands below to compare the correlations for men and women.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="regression-and-correlation.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cocor)</span>
-<span id="cb363-2"><a href="regression-and-correlation.html#cb363-2" aria-hidden="true" tabindex="-1"></a>bfi_men_dataframe   <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(bfi_men)</span>
-<span id="cb363-3"><a href="regression-and-correlation.html#cb363-3" aria-hidden="true" tabindex="-1"></a>bfi_women_dataframe <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(bfi_women)</span>
-<span id="cb363-4"><a href="regression-and-correlation.html#cb363-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb363-5"><a href="regression-and-correlation.html#cb363-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cocor</span>( <span class="sc">~</span> a1 <span class="sc">+</span> e1 <span class="sc">|</span> a1 <span class="sc">+</span> e1,</span>
-<span id="cb363-6"><a href="regression-and-correlation.html#cb363-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> <span class="fu">list</span>(bfi_men_dataframe, bfi_women_dataframe))</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="regression-and-correlation.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cocor)</span>
+<span id="cb346-2"><a href="regression-and-correlation.html#cb346-2" aria-hidden="true" tabindex="-1"></a>bfi_men_dataframe   <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(bfi_men)</span>
+<span id="cb346-3"><a href="regression-and-correlation.html#cb346-3" aria-hidden="true" tabindex="-1"></a>bfi_women_dataframe <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(bfi_women)</span>
+<span id="cb346-4"><a href="regression-and-correlation.html#cb346-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb346-5"><a href="regression-and-correlation.html#cb346-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cocor</span>( <span class="sc">~</span> a1 <span class="sc">+</span> e1 <span class="sc">|</span> a1 <span class="sc">+</span> e1,</span>
+<span id="cb346-6"><a href="regression-and-correlation.html#cb346-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> <span class="fu">list</span>(bfi_men_dataframe, bfi_women_dataframe))</span></code></pre></div>
 <pre><code>## 
 ##   Results of a comparison of two correlations based on independent groups
 ## 
@@ -1144,7 +1147,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
