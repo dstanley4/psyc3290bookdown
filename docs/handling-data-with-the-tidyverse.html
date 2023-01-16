@@ -23,7 +23,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2023-01-07" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -508,6 +508,9 @@ div.csl-indent {
 </table>
 <p>The following GitHub package must be installed:</p>
 <table>
+<colgroup>
+<col width="100%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Required GitHub Packages</th>
@@ -515,12 +518,12 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td>spielmanlab/introverse</td>
+<td><a href="https://github.com/sjspielman/introverse">https://github.com/sjspielman/introverse</a></td>
 </tr>
 </tbody>
 </table>
 <p>After the remotes package is installed, it can be used to install the introverse package from GitHub (an alternative “App Store”). If you get asked if you would like to install more recent versions of packages on your machine press “1” and Return to indicate “All” (if you are asked, you may not be).</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="handling-data-with-the-tidyverse.html#cb55-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;spielmanlab/introverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="handling-data-with-the-tidyverse.html#cb55-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;sjspielman/introverse&quot;</span>)</span></code></pre></div>
 </div>
 <div id="objective" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Objective<a href="handling-data-with-the-tidyverse.html#objective" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -750,7 +753,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="handling-data-with-the-tidyverse.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb94-2"><a href="handling-data-with-the-tidyverse.html#cb94-2" aria-hidden="true" tabindex="-1"></a>data_exp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data_experiment.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 6 Columns: 6
-## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (1): sex
 ## dbl (5): id, t1_vomit, t1_aggression, t2_vomit, t2_aggre...
@@ -1085,7 +1088,7 @@ div.csl-indent {
 <p>When you read data into R using the command read_csv() (with an underscore) you load the data into a tibble (tidyverse).</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="handling-data-with-the-tidyverse.html#cb150-1" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 59946 Columns: 6
-## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): diet, pets, sex, status
 ## dbl (2): age, height
