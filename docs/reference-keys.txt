@@ -63,7 +63,7 @@ fig:pipeline
 tab:betweenex
 tab:withinex
 tab:withintidyex
-introduction-to-r
+introduction
 a-focus-on-workflow
 r-works-with-plug-ins
 software-choice
