@@ -107,9 +107,10 @@ revisiting-read_csv
 thats-it
 handling-data-with-the-tidyverse
 required
+extra-help
 objective
 using-the-console
-tidyverse-help-with-the-introverse
+tidyverse-help
 basic-tidyverse-commands
 select
 summarise
